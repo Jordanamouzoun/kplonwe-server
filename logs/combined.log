@@ -63,3 +63,7 @@
 {"level":"info","message":"🔄 Vérification des abonnements expirés...","service":"educonnect-api","timestamp":"2026-03-03 12:00:00"}
 {"level":"info","message":"✅ Aucun abonnement expiré","service":"educonnect-api","timestamp":"2026-03-03 12:00:00"}
 {"level":"info","message":"✅ CRON: 0 abonnement(s) traité(s)","service":"educonnect-api","timestamp":"2026-03-03 12:00:00"}
+{"level":"info","message":"⏰ CRON: Vérification des abonnements expirés...","service":"educonnect-api","timestamp":"2026-03-03 18:00:00"}
+{"level":"info","message":"🔄 Vérification des abonnements expirés...","service":"educonnect-api","timestamp":"2026-03-03 18:00:00"}
+{"level":"info","message":"✅ Aucun abonnement expiré","service":"educonnect-api","timestamp":"2026-03-03 18:00:00"}
+{"level":"info","message":"✅ CRON: 0 abonnement(s) traité(s)","service":"educonnect-api","timestamp":"2026-03-03 18:00:00"}

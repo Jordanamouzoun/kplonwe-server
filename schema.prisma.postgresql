@@ -1,0 +1,349 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// PostgreSQL supporte les enums natifs
+enum UserRole {
+  ADMIN
+  TEACHER
+  PARENT
+  STUDENT
+  SCHOOL
+}
+
+enum ValidationStatus {
+  PENDING
+  VERIFIED
+  REJECTED
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELLED
+  EXPIRED
+  PENDING
+}
+
+enum TransactionType {
+  DEPOSIT
+  WITHDRAWAL
+  PAYMENT
+  REFUND
+  BONUS
+}
+
+enum TransactionStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+
+enum DocumentType {
+  DIPLOMA
+  ID_CARD
+  CERTIFICATE
+  OTHER
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      UserRole
+  firstName String?
+  lastName  String?
+  phone     String?
+  avatar    String?
+  isVerified Boolean @default(false)
+  isActive  Boolean  @default(true)
+  termsAccepted Boolean @default(false)
+  termsAcceptedAt DateTime?
+  termsVersion String?
+  lastLogin DateTime?
+  
+  accessibilitySettings String? // JSON
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  teacherProfile TeacherProfile?
+  parentProfile  ParentProfile?
+  schoolProfile  SchoolProfile?
+  children       Child[]
+  wallet         Wallet?
+  transactions   Transaction[]
+  messages       Message[] @relation("UserMessages")
+  notifications  Notification[]
+  sessions       Session[]
+
+  @@index([email])
+  @@index([role])
+}
+
+model TeacherProfile {
+  id        String @id @default(uuid())
+  userId    String @unique
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  bio       String?
+  subjects  String? // JSON array
+  levels    String? // JSON array
+  experience Int?
+  education String?
+  certifications String? // JSON array
+  pricePerMonth Int?
+  pricePerHour Int?
+  availableSlots String? // JSON
+  
+  validationStatus ValidationStatus @default(PENDING)
+  validatedBy      String?
+  validatedAt      DateTime?
+  rejectionReason  String?
+  
+  rating      Float @default(0.0)
+  reviewCount Int   @default(0)
+  isPremium   Boolean @default(false)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  documents Document[]
+  subscriptions Subscription[]
+  
+  @@index([validationStatus])
+  @@index([userId])
+}
+
+model ParentProfile {
+  id        String @id @default(uuid())
+  userId    String @unique
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  address   String?
+  city      String?
+  profession String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SchoolProfile {
+  id        String @id @default(uuid())
+  userId    String @unique
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  schoolName String
+  address    String?
+  city       String?
+  principalName String?
+  phoneNumber   String?
+  email         String?
+  
+  validationStatus ValidationStatus @default(PENDING)
+  validatedBy      String?
+  validatedAt      DateTime?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Child {
+  id        String @id @default(uuid())
+  parentId  String
+  parent    User   @relation(fields: [parentId], references: [id], onDelete: Cascade)
+  
+  firstName String
+  lastName  String
+  dateOfBirth DateTime?
+  grade     String?
+  school    String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  evaluations Evaluation[]
+  orientations Orientation[]
+
+  @@index([parentId])
+}
+
+model Document {
+  id        String @id @default(uuid())
+  teacherId String
+  teacher   TeacherProfile @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  
+  type      DocumentType
+  filename  String
+  url       String
+  mimeType  String?
+  size      Int?
+  
+  isVerified Boolean @default(false)
+  verifiedBy String?
+  verifiedAt DateTime?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([teacherId])
+}
+
+model Subscription {
+  id        String @id @default(uuid())
+  teacherId String
+  teacher   TeacherProfile @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  
+  planType  String
+  price     Int
+  startDate DateTime
+  endDate   DateTime
+  status    SubscriptionStatus @default(PENDING)
+  
+  autoRenew Boolean @default(false)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([teacherId])
+  @@index([status])
+}
+
+model Wallet {
+  id        String @id @default(uuid())
+  userId    String @unique
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  balance   Int @default(0)
+  currency  String @default("XOF")
+  
+  isActive  Boolean @default(true)
+  isFrozen  Boolean @default(false)
+  frozenAt  DateTime?
+  frozenReason String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Transaction {
+  id        String @id @default(uuid())
+  userId    String
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  type      TransactionType
+  amount    Int
+  currency  String @default("XOF")
+  status    TransactionStatus @default(PENDING)
+  
+  description String?
+  reference   String? @unique
+  metadata    String? // JSON
+  
+  stripePaymentIntentId String?
+  errorMessage String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([status])
+  @@index([reference])
+}
+
+model Evaluation {
+  id        String @id @default(uuid())
+  childId   String
+  child     Child  @relation(fields: [childId], references: [id], onDelete: Cascade)
+  
+  title     String
+  score     Int
+  maxScore  Int
+  subject   String?
+  comments  String?
+  evaluatedAt DateTime @default(now())
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([childId])
+}
+
+model Orientation {
+  id        String @id @default(uuid())
+  childId   String
+  child     Child  @relation(fields: [childId], references: [id], onDelete: Cascade)
+  
+  recommended String // JSON
+  strengths   String?
+  weaknesses  String?
+  suggestions String?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([childId])
+}
+
+model Message {
+  id        String @id @default(uuid())
+  senderId  String
+  sender    User   @relation("UserMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  
+  recipientId String
+  subject     String?
+  content     String
+  isRead      Boolean @default(false)
+  readAt      DateTime?
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([senderId])
+  @@index([recipientId])
+  @@index([isRead])
+}
+
+model Notification {
+  id        String @id @default(uuid())
+  userId    String
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  type      String
+  title     String
+  message   String
+  isRead    Boolean @default(false)
+  readAt    DateTime?
+  
+  link      String?
+  metadata  String? // JSON
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([isRead])
+}
+
+model Session {
+  id        String @id @default(uuid())
+  userId    String
+  user      User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  token     String @unique
+  ipAddress String?
+  userAgent String?
+  expiresAt DateTime
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([token])
+  @@index([expiresAt])
+}
