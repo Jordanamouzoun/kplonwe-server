@@ -7,7 +7,7 @@ npm install
 echo "🔧 Generating Prisma Client..."
 npx prisma generate
 
-echo "🔄 Running database migrations..."
-npx prisma migrate deploy
+echo "🔄 Creating database schema..."
+npx prisma db push --skip-generate
 
 echo "✅ Build complete!"

@@ -63,3 +63,20 @@
 {"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-03 21:15:50"}
 {"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-03 21:15:50"}
 {"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-03 21:15:50"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-05 13:05:35"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-05 13:05:35"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-05 13:05:35"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-05 13:05:35"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-05 13:05:35"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-05 13:05:35"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-05 13:05:35"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-05 13:05:35"}
+{"error":"Cet email est déjà utilisé","level":"error","message":"[POST] /api/v1/auth/register - Cet email est déjà utilisé","service":"educonnect-api","stack":"Error: Cet email est déjà utilisé\n    at Module.registerUser (file:///home/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.service.js:23:11)\n    at async file:///home/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:5:18","timestamp":"2026-03-05 13:06:05"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
