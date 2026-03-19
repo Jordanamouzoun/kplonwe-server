@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
@@ -22,6 +23,12 @@ model User {
   termsAcceptedAt DateTime?
   termsVersion String?
   lastLogin DateTime?
+  
+  verificationCode String?
+  verificationCodeExpiresAt DateTime?
+  
+  resetCode String?
+  resetCodeExpiresAt DateTime?
   
   accessibilitySettings String? // JSON
   
@@ -68,7 +75,9 @@ model TeacherProfile {
   
   // Prix et niveaux
   pricePerMonth     Float?           // Prix mensuel en FCFA
+  pricePerHour      Float?           // Prix par heure en FCFA
   levels            String?          // JSON array - Niveaux enseignés (CE1, CE2, etc.)
+  specialty         String?          // Spécialité (ex: Mathématiques, Physique)
   
   validationStatus  String           @default("PENDING") // PENDING, VERIFIED, REJECTED
   validationComment String?
@@ -78,8 +87,9 @@ model TeacherProfile {
   isPremium         Boolean          @default(false)
   premiumUntil      DateTime?
   
-  rating            Float            @default(0)
+  rating            Float            @default(1.0)
   reviewCount       Int              @default(0)
+  points            Int              @default(0)
   totalStudents     Int              @default(0)
   totalEarnings     Float            @default(0)
   

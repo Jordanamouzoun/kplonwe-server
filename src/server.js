@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { PrismaClient } from '@prisma/client';
+import prisma from './lib/prisma.js';
 import fs from 'fs';
 import path from 'path';
 import app from './app.js';
@@ -8,7 +8,6 @@ import { startSubscriptionCron } from './cron/subscriptions.cron.js';
 
 dotenv.config();
 
-const prisma = new PrismaClient();
 const PORT = process.env.PORT || 5000;
 
 // Fonction pour vérifier/créer dossiers uploads

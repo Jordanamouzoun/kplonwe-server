@@ -1,10 +1,9 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../lib/prisma.js';
 import { hashPassword, comparePassword, validatePasswordStrength } from '../../utils/password.js';
 import { isValidEmail } from '../../utils/validation.js';
 import { generateToken, generateRefreshToken, verifyRefreshToken } from '../../config/jwt.js';
 import { AppError } from '../../middlewares/error.middleware.js';
 
-const prisma = new PrismaClient();
 
 export const registerUser = async (data) => {
   const { email, password, role, firstName, lastName, phone } = data;

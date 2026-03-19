@@ -29,7 +29,6 @@ import messagingRoutes from './modules/messaging/messaging.routes.js';
 import notificationsRoutes from './modules/notifications/notifications.routes.js';
 import teacherProfileRoutes from './modules/teacher-profile/teacher-profile.routes.js';
 import evaluationRoutes from './modules/evaluation/evaluation.routes.js';
-import orientationRoutes from './modules/orientation/orientation.routes.js';
 
 const app = express();
 
@@ -41,8 +40,25 @@ app.use(helmet({
   crossOriginResourcePolicy: { policy: 'cross-origin' },
 }));
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  process.env.FRONTEND_URL,
+  process.env.CORS_ORIGIN
+].filter(Boolean);
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    // Les outils comme Postman n'envoient pas de header origin
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development') {
+      callback(null, true);
+    } else {
+      console.log(`[CORS] Rejeté: ${origin}`);
+      callback(new Error('Non autorisé par CORS'));
+    }
+  },
   credentials: true,
 }));
 
@@ -82,10 +98,12 @@ app.use(`${apiPrefix}/messages`,      messagingRoutes);
 app.use(`${apiPrefix}/notifications`, notificationsRoutes);
 app.use(`${apiPrefix}/teachers`,      teacherProfileRoutes);
 app.use(`${apiPrefix}/evaluation`,    evaluationRoutes);
-app.use(`${apiPrefix}/orientation`,   orientationRoutes);
 
 // ── Error handling ────────────────────────────────────────────────────────────
-app.use((req, res) => res.status(404).json({ success: false, message: 'Route not found' }));
+app.use((req, res) => {
+  console.log(`[404] ${req.method} ${req.url}`);
+  res.status(404).json({ success: false, message: 'Route not found' });
+});
 app.use(errorHandler);
 
 export default app;

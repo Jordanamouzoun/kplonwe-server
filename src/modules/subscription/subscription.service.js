@@ -1,9 +1,8 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../lib/prisma.js';
 import { v4 as uuidv4 } from 'uuid';
 import { AppError } from '../../middlewares/error.middleware.js';
 import logger from '../../utils/logger.js';
 
-const prisma = new PrismaClient();
 
 // Prix des abonnements (en FCFA)
 const SUBSCRIPTION_PRICES = {

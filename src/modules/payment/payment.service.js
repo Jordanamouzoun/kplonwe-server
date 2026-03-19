@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../lib/prisma.js';
 import { v4 as uuidv4 } from 'uuid';
 import { AppError } from '../../middlewares/error.middleware.js';
 import * as momoProvider from './providers/momo.provider.js';
@@ -6,7 +6,6 @@ import * as moovProvider from './providers/moov.provider.js';
 import * as stripeProvider from './providers/stripe.provider.js';
 import logger from '../../utils/logger.js';
 
-const prisma = new PrismaClient();
 
 // Configuration
 const COMMISSION_RATE = parseFloat(process.env.PLATFORM_COMMISSION_RATE) || 0.02;

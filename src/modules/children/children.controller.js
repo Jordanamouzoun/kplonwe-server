@@ -1,8 +1,8 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../lib/prisma.js';
 import bcrypt from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
+import { sendVerificationEmail } from '../../utils/email.js';
 
-const prisma = new PrismaClient();
 
 /**
  * Créer un compte enfant (élève)
@@ -57,6 +57,9 @@ export const createChild = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 12);
 
     // Créer l'utilisateur enfant en transaction
+    const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24h
+
     const result = await prisma.$transaction(async (tx) => {
       // 1. Créer le User avec role STUDENT
       const childUser = await tx.user.create({
@@ -67,7 +70,9 @@ export const createChild = async (req, res) => {
           role: 'STUDENT',
           firstName,
           lastName,
-          isVerified: true, // Auto-vérifié car créé par parent
+          isVerified: false, // Doit vérifier son email
+          verificationCode,
+          verificationCodeExpiresAt: expiresAt,
           isActive: true,
         },
       });
@@ -98,13 +103,18 @@ export const createChild = async (req, res) => {
     // Retourner les infos de l'enfant créé (sans le mot de passe)
     const { password: _, ...childWithoutPassword } = result.childUser;
 
+    // Envoyer l'email de vérification
+    await sendVerificationEmail(email, verificationCode);
+
     res.status(201).json({
       success: true,
-      message: 'Compte enfant créé avec succès',
-      child: {
-        ...childWithoutPassword,
-        grade,
-      },
+      message: 'Compte enfant créé avec succès. Un code de vérification a été envoyé à son adresse email.',
+      data: { 
+        child: {
+          ...childWithoutPassword,
+          grade,
+        }
+      }
     });
   } catch (error) {
     console.error('Erreur création enfant:', error);

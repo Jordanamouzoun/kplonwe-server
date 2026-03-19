@@ -1,46 +1,44 @@
 import express from 'express';
+import { 
+  getStats, 
+  getAllTeachers, 
+  getPendingTeachers, 
+  getTeacherDetails, 
+  validateTeacher, 
+  rejectTeacher,
+  verifyDocument,
+  rejectDocument,
+  getAllParents,
+  getAllSchools,
+  getAllAdmins,
+  createAdmin,
+  deleteAdmin,
+  getPMFCohorts
+} from './admin.controller.js';
 import { authenticate } from '../../middlewares/auth.middleware.js';
 import { requireRole } from '../../middlewares/role.middleware.js';
-import * as adminController from './admin.controller.js';
 
 const router = express.Router();
 
-// Toutes les routes admin exigent auth + rôle ADMIN
-router.use(authenticate);
-router.use(requireRole('ADMIN'));
+// Appliquer authenticate et requireRole('ADMIN') à toutes les routes
+router.use(authenticate, requireRole('ADMIN'));
 
-// Stats
-router.get('/stats', adminController.getStats);
+router.get('/stats', getStats);
+router.get('/teachers', getAllTeachers);
+router.get('/teachers/pending', getPendingTeachers);
+router.get('/teachers/:id', getTeacherDetails);
+router.put('/teachers/:id/validate', validateTeacher);
+router.put('/teachers/:id/reject', rejectTeacher);
 
-// Teachers
-router.get('/teachers', adminController.getAllTeachers);
-router.get('/teachers/pending', adminController.getPendingTeachers);
-router.get('/teachers/:id', adminController.getTeacherDetails);
-router.patch('/teachers/:id/validate', adminController.validateTeacher);
-router.patch('/teachers/:id/reject', adminController.rejectTeacher);
-// Compat avec ancien frontend (PUT)
-router.put('/teachers/:id/validate', adminController.validateTeacher);
-router.put('/teachers/:id/reject', adminController.rejectTeacher);
-// Compat avec nouveau frontend (POST)
-router.post('/teachers/:id/validate', adminController.validateTeacher);
+router.put('/documents/:docId/verify', verifyDocument);
+router.put('/documents/:docId/reject', rejectDocument);
 
-// Parents
-router.get('/parents', adminController.getAllParents);
+router.get('/parents', getAllParents);
+router.get('/schools', getAllSchools);
+router.get('/admins', getAllAdmins);
+router.post('/admins', createAdmin);
+router.delete('/admins/:id', deleteAdmin);
 
-// Schools
-router.get('/schools', adminController.getAllSchools);
-
-// Admins
-router.get('/admins', adminController.getAllAdmins);
-router.post('/admins', adminController.createAdmin);
-router.delete('/admins/:id', adminController.deleteAdmin);
-
-// Documents
-router.patch('/documents/:docId/verify', adminController.verifyDocument);
-router.patch('/documents/:docId/reject', adminController.rejectDocument);
-
-// PMF Cohorts
-router.get('/pmf-cohorts', adminController.getPMFCohorts);
+router.get('/pmf-cohorts', getPMFCohorts);
 
 export default router;
-

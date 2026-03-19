@@ -1,9 +1,8 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../lib/prisma.js';
 import { v4 as uuidv4 } from 'uuid';
 import path from 'path';
 import fs from 'fs/promises';
 
-const prisma = new PrismaClient();
 const UPLOAD_DIR = path.join(process.cwd(), 'uploads', 'teacher-documents');
 
 /**

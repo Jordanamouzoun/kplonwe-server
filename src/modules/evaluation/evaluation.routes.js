@@ -1,26 +1,25 @@
 import express from 'express';
-import {
-  createEvaluationQuiz,
-  assignQuizToTeacher,
-  getTeacherAssignments,
-  getQuizForTaking,
-  submitQuizAnswers,
-  getQuizResults,
+import { 
+  createEvaluationQuiz, 
+  assignQuizToTeacher, 
+  getTeacherAssignments, 
+  getQuizForTaking, 
+  submitQuizAnswers, 
+  getQuizResults 
 } from './evaluation.controller.js';
 import { authenticate } from '../../middlewares/auth.middleware.js';
+import { requireRole } from '../../middlewares/role.middleware.js';
 
 const router = express.Router();
 
 router.use(authenticate);
 
-// Écoles - création et gestion quiz
-router.post('/quizzes', createEvaluationQuiz);
-router.post('/quizzes/:quizId/assign', assignQuizToTeacher);
-router.get('/quizzes/:quizId/results', getQuizResults);
+router.post('/quizzes', requireRole('SCHOOL'), createEvaluationQuiz);
+router.post('/quizzes/:quizId/assign', requireRole('SCHOOL'), assignQuizToTeacher);
+router.get('/quizzes/:quizId/results', requireRole('SCHOOL'), getQuizResults);
 
-// Professeurs - assignments et passage
-router.get('/assignments', getTeacherAssignments);
-router.get('/quizzes/:quizId', getQuizForTaking);
-router.post('/quizzes/:quizId/submit', submitQuizAnswers);
+router.get('/assignments', requireRole('TEACHER'), getTeacherAssignments);
+router.get('/quizzes/:quizId', requireRole('TEACHER'), getQuizForTaking);
+router.post('/quizzes/:quizId/submit', requireRole('TEACHER'), submitQuizAnswers);
 
 export default router;

@@ -1,15 +1,17 @@
 import express from 'express';
-import { authenticate } from '../../middlewares/auth.middleware.js';
 import * as authController from './auth.controller.js';
+import { authenticate } from '../../middlewares/auth.middleware.js';
 
 const router = express.Router();
 
 router.post('/register', authController.register);
+router.post('/verify-email', authController.verifyEmail);
+router.post('/resend-verification', authController.resendVerificationCode);
 router.post('/login', authController.login);
-router.post('/refresh', authController.refresh);
 router.post('/logout', authenticate, authController.logout);
-router.get('/me', authenticate, authController.getMe);
-router.get('/profile', authenticate, authController.getMe); // Alias pour /me
-router.put('/accept-terms', authenticate, authController.acceptTerms);
+router.get('/profile', authenticate, authController.getProfile);
+router.post('/forgot-password', authController.forgotPassword);
+router.post('/reset-password', authController.resetPassword);
+router.post('/refresh', authController.refresh);
 
 export default router;

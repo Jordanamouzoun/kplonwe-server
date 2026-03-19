@@ -1,7 +1,6 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../lib/prisma.js';
 import { AppError } from '../../middlewares/error.middleware.js';
 
-const prisma = new PrismaClient();
 
 export const getWalletByUserId = async (userId) => {
   const wallet = await prisma.wallet.findUnique({

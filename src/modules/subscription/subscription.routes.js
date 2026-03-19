@@ -1,22 +1,21 @@
 import express from 'express';
+import { 
+  subscribePremium, 
+  subscribeSchool, 
+  getMySubscriptions, 
+  checkActiveSubscription, 
+  cancelSubscription 
+} from './subscription.controller.js';
 import { authenticate } from '../../middlewares/auth.middleware.js';
-import { requireRole } from '../../middlewares/role.middleware.js';
-import * as subscriptionController from './subscription.controller.js';
 
 const router = express.Router();
 
-// Toutes les routes nécessitent authentification
 router.use(authenticate);
 
-// Souscrire
-router.post('/premium', requireRole('TEACHER'), subscriptionController.subscribePremium);
-router.post('/school', requireRole('SCHOOL'), subscriptionController.subscribeSchool);
-
-// Consulter ses abonnements
-router.get('/my', subscriptionController.getMySubscriptions);
-router.get('/active/:type', subscriptionController.checkActiveSubscription);
-
-// Annuler
-router.put('/:id/cancel', subscriptionController.cancelSubscription);
+router.post('/premium', subscribePremium);
+router.post('/school', subscribeSchool);
+router.get('/my-subscriptions', getMySubscriptions);
+router.get('/active-check/:type', checkActiveSubscription);
+router.put('/:id/cancel', cancelSubscription);
 
 export default router;

@@ -1,8 +1,7 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../lib/prisma.js';
 import { AppError } from '../../middlewares/error.middleware.js';
 import { hashPassword } from '../../utils/password.js';
 
-const prisma = new PrismaClient();
 
 // ── STATS ──────────────────────────────────────────────────────────────────
 
@@ -98,6 +97,7 @@ export const validateTeacher = async (teacherId, adminId, comment) => {
       validatedBy: adminId,
       validatedAt: new Date(),
       validationComment: comment || null,
+      rating: teacher.rating <= 1.0 ? 3.0 : teacher.rating, // Initial 3 stars upon certification
     },
   });
 

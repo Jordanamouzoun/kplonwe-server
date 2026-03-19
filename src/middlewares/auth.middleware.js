@@ -1,7 +1,6 @@
+import prisma from '../lib/prisma.js';
 import { verifyToken } from '../config/jwt.js';
-import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
 
 export const authenticate = async (req, res, next) => {
   try {

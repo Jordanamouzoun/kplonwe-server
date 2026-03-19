@@ -1,22 +1,28 @@
 import express from 'express';
+import { 
+  rechargeWallet, 
+  transferMoney, 
+  payTeacher, 
+  momoWebhook, 
+  moovWebhook, 
+  stripeWebhook, 
+  getTransactionStatus 
+} from './payment.controller.js';
 import { authenticate } from '../../middlewares/auth.middleware.js';
-import * as paymentController from './payment.controller.js';
 
 const router = express.Router();
 
-// Recharge wallet
-router.post('/recharge', authenticate, paymentController.rechargeWallet);
+// Webhooks (pas d'auth car appelés par les prestataires)
+router.post('/webhooks/momo', momoWebhook);
+router.post('/webhooks/moov', moovWebhook);
+router.post('/webhooks/stripe', express.raw({ type: 'application/json' }), stripeWebhook);
 
-// Paiements
-router.post('/transfer', authenticate, paymentController.transferMoney);
-router.post('/pay-teacher', authenticate, paymentController.payTeacher);
+// Routes protégées
+router.use(authenticate);
 
-// Webhooks (publics - pas d'authentification)
-router.post('/webhook/momo', paymentController.momoWebhook);
-router.post('/webhook/moov', paymentController.moovWebhook);
-router.post('/webhook/stripe', paymentController.stripeWebhook);
-
-// Status
-router.get('/transaction/:reference', authenticate, paymentController.getTransactionStatus);
+router.post('/recharge', rechargeWallet);
+router.post('/transfer', transferMoney);
+router.post('/pay-teacher', payTeacher);
+router.get('/status/:reference', getTransactionStatus);
 
 export default router;

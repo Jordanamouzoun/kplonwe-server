@@ -1,47 +1,34 @@
 import express from 'express';
-import {
-  getTeacherProfile,
-  updateTeacherProfile,
-  getOwnProfile,
-  searchTeachers,
+import { 
+  getTeacherProfile, 
+  updateTeacherProfile, 
+  getOwnProfile, 
+  searchTeachers, 
   uploadAvatar,
-  getMyPublicProfile,
-  addTeacher,
-} from './teacher-profile.controller.js';
-import {
   uploadDocument,
-  getDocuments,
-  deleteDocument,
-  getPublicDocuments,
-} from './teacher-documents.controller.js';
+  getMyCourses,
+  getMyPublicProfile,
+  addTeacher
+} from './teacher-profile.controller.js';
 import { authenticate } from '../../middlewares/auth.middleware.js';
-import { optionalAuth } from '../../middlewares/optional-auth.middleware.js';
 import upload from '../../middlewares/upload.middleware.js';
-import uploadAvatarMiddleware from '../../middlewares/upload-avatar.middleware.js';
 
 const router = express.Router();
 
 // Routes publiques
-router.get('/search', searchTeachers); // Recherche professeurs
-
-// Route spéciale "me" - DOIT être avant /:teacherId
-router.get('/me/profile', authenticate, getMyPublicProfile);
-
+router.get('/search', searchTeachers);
 router.get('/:teacherId/profile', getTeacherProfile);
-router.get('/:teacherId/documents', optionalAuth, getPublicDocuments); // Documents publics d'un prof (auth optionnelle)
-router.post('/:teacherId/add', authenticate, addTeacher); // Parent ajoute un prof (PMF event)
 
-// Routes protégées
-router.use(authenticate);
+// Routes protégées (Professeur)
+router.get('/profile', authenticate, getOwnProfile);
+router.put('/profile', authenticate, updateTeacherProfile);
+router.get('/me/profile', authenticate, getMyPublicProfile);
+router.get('/me/courses', authenticate, getMyCourses);
+router.post('/profile/avatar', authenticate, upload.single('avatar'), uploadAvatar);
+router.post('/upload-avatar', authenticate, upload.single('avatar'), uploadAvatar);
+router.post('/upload-document', authenticate, upload.single('document'), uploadDocument);
 
-// Profil
-router.get('/profile', getOwnProfile);
-router.put('/profile', updateTeacherProfile);
-router.post('/profile/avatar', uploadAvatarMiddleware.single('avatar'), uploadAvatar);
-
-// Documents - utiliser multer pour upload
-router.post('/documents', upload.single('file'), uploadDocument);
-router.get('/documents', getDocuments);
-router.delete('/documents/:documentId', deleteDocument);
+// Route protégée (Parent)
+router.post('/:teacherId/add', authenticate, addTeacher);
 
 export default router;

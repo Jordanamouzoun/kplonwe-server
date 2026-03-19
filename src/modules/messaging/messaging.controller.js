@@ -1,7 +1,6 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '../../lib/prisma.js';
 import { v4 as uuidv4 } from 'uuid';
 
-const prisma = new PrismaClient();
 
 // Vérifier si la conversation est autorisée selon les règles métier
 function isConversationAllowed(role1, role2) {

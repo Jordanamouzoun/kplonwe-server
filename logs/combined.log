@@ -80,3 +80,327 @@
 {"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
 {"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
 {"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-05 13:20:56"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 09:20:34"}
+{"level":"info","message":"✅ Créé: uploads/documents","service":"educonnect-api","timestamp":"2026-03-19 09:20:34"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 09:20:34"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 09:20:36"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 09:20:36"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 09:20:36"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 09:20:36"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 09:20:36"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 10:19:10"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 10:19:10"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 10:19:11"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 10:19:11"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 10:19:11"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 10:19:11"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 10:19:11"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 10:29:41"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 10:29:41"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 10:29:42"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 10:29:42"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 10:29:42"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 10:29:42"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 10:29:42"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 10:29:45"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 10:29:45"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 10:29:46"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 10:29:46"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 10:29:46"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 10:29:46"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 10:29:46"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 10:29:47"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 10:29:47"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 10:29:48"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 10:29:48"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 10:29:48"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 10:29:48"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 10:29:48"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 10:29:54"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 10:29:54"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 10:29:54"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 10:29:54"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 10:29:54"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 10:29:54"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 10:29:54"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 10:30:45"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 10:30:45"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 10:30:46"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 10:30:46"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 10:30:46"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 10:30:46"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 10:30:46"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 10:30:47"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 10:30:47"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 10:30:47"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 10:30:47"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 10:30:47"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 10:30:47"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 10:30:47"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 10:38:53"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 10:38:53"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 10:38:55"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 10:38:55"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 10:38:55"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 10:38:55"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 10:38:55"}
+{"error":"\nInvalid `prisma.user.create()` invocation:\n\n{\n  data: {\n    email: \"dhilomoun2006@gmail.com\",\n    password: \"$2a$12$AJQhhT7Uy87pQYVHZ3Zm2OUFuePDbUubiANRZ2.sAUEDQBd69g72a\",\n    role: \"TEACHER\",\n    firstName: \"Jordan\",\n    lastName: \"Amouzoun\",\n    verificationCode: \"633559\",\n    ~~~~~~~~~~~~~~~~\n    verificationCodeExpiresAt: new Date(\"2026-03-20T09:41:46.989Z\"),\n    isActive: true,\n    wallet: {\n      create: {\n        balance: 0\n      }\n    },\n?   id?: String,\n?   phone?: String | Null,\n?   avatar?: String | Null,\n?   isVerified?: Boolean,\n?   termsAccepted?: Boolean,\n?   termsAcceptedAt?: DateTime | Null,\n?   termsVersion?: String | Null,\n?   lastLogin?: DateTime | Null,\n?   accessibilitySettings?: String | Null,\n?   createdAt?: DateTime,\n?   updatedAt?: DateTime,\n?   teacherProfile?: TeacherProfileCreateNestedOneWithoutUserInput,\n?   parentProfile?: ParentProfileCreateNestedOneWithoutUserInput,\n?   studentProfile?: StudentProfileCreateNestedOneWithoutUserInput,\n?   schoolProfile?: SchoolProfileCreateNestedOneWithoutUserInput,\n?   forumPosts?: ForumPostCreateNestedManyWithoutAuthorInput,\n?   forumComments?: ForumCommentCreateNestedManyWithoutAuthorInput,\n?   notifications?: NotificationCreateNestedManyWithoutUserInput,\n?   sessions?: SessionCreateNestedManyWithoutUserInput\n  }\n}\n\nUnknown argument `verificationCode`. Available options are marked with ?.","level":"error","message":"[POST] /api/v1/auth/register - Erreur serveur","service":"educonnect-api","stack":"PrismaClientValidationError: \nInvalid `prisma.user.create()` invocation:\n\n{\n  data: {\n    email: \"dhilomoun2006@gmail.com\",\n    password: \"$2a$12$AJQhhT7Uy87pQYVHZ3Zm2OUFuePDbUubiANRZ2.sAUEDQBd69g72a\",\n    role: \"TEACHER\",\n    firstName: \"Jordan\",\n    lastName: \"Amouzoun\",\n    verificationCode: \"633559\",\n    ~~~~~~~~~~~~~~~~\n    verificationCodeExpiresAt: new Date(\"2026-03-20T09:41:46.989Z\"),\n    isActive: true,\n    wallet: {\n      create: {\n        balance: 0\n      }\n    },\n?   id?: String,\n?   phone?: String | Null,\n?   avatar?: String | Null,\n?   isVerified?: Boolean,\n?   termsAccepted?: Boolean,\n?   termsAcceptedAt?: DateTime | Null,\n?   termsVersion?: String | Null,\n?   lastLogin?: DateTime | Null,\n?   accessibilitySettings?: String | Null,\n?   createdAt?: DateTime,\n?   updatedAt?: DateTime,\n?   teacherProfile?: TeacherProfileCreateNestedOneWithoutUserInput,\n?   parentProfile?: ParentProfileCreateNestedOneWithoutUserInput,\n?   studentProfile?: StudentProfileCreateNestedOneWithoutUserInput,\n?   schoolProfile?: SchoolProfileCreateNestedOneWithoutUserInput,\n?   forumPosts?: ForumPostCreateNestedManyWithoutAuthorInput,\n?   forumComments?: ForumCommentCreateNestedManyWithoutAuthorInput,\n?   notifications?: NotificationCreateNestedManyWithoutUserInput,\n?   sessions?: SessionCreateNestedManyWithoutUserInput\n  }\n}\n\nUnknown argument `verificationCode`. Available options are marked with ?.\n    at wn (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:29:1363)\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6958)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async register (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:21:18)","timestamp":"2026-03-19 10:41:46"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 10:44:46"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 10:44:46"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 10:44:48"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 10:44:48"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 10:44:48"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 10:44:48"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 10:44:48"}
+{"error":"\nInvalid `prisma.user.update()` invocation:\n\n{\n  where: {\n    email: \"dhilomoun2006@gmail.com\"\n  },\n  data: {\n    resetCode: \"548405\",\n    ~~~~~~~~~\n    resetCodeExpiresAt: new Date(\"2026-03-19T10:49:04.592Z\"),\n?   id?: String | StringFieldUpdateOperationsInput,\n?   email?: String | StringFieldUpdateOperationsInput,\n?   password?: String | StringFieldUpdateOperationsInput,\n?   role?: String | StringFieldUpdateOperationsInput,\n?   firstName?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   lastName?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   phone?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   avatar?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   isVerified?: Boolean | BoolFieldUpdateOperationsInput,\n?   isActive?: Boolean | BoolFieldUpdateOperationsInput,\n?   termsAccepted?: Boolean | BoolFieldUpdateOperationsInput,\n?   termsAcceptedAt?: DateTime | NullableDateTimeFieldUpdateOperationsInput | Null,\n?   termsVersion?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   lastLogin?: DateTime | NullableDateTimeFieldUpdateOperationsInput | Null,\n?   verificationCode?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   verificationCodeExpiresAt?: DateTime | NullableDateTimeFieldUpdateOperationsInput | Null,\n?   accessibilitySettings?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   createdAt?: DateTime | DateTimeFieldUpdateOperationsInput,\n?   updatedAt?: DateTime | DateTimeFieldUpdateOperationsInput,\n?   teacherProfile?: TeacherProfileUpdateOneWithoutUserNestedInput,\n?   parentProfile?: ParentProfileUpdateOneWithoutUserNestedInput,\n?   studentProfile?: StudentProfileUpdateOneWithoutUserNestedInput,\n?   schoolProfile?: SchoolProfileUpdateOneWithoutUserNestedInput,\n?   wallet?: WalletUpdateOneWithoutUserNestedInput,\n?   forumPosts?: ForumPostUpdateManyWithoutAuthorNestedInput,\n?   forumComments?: ForumCommentUpdateManyWithoutAuthorNestedInput,\n?   notifications?: NotificationUpdateManyWithoutUserNestedInput,\n?   sessions?: SessionUpdateManyWithoutUserNestedInput\n  }\n}\n\nUnknown argument `resetCode`. Available options are marked with ?.","level":"error","message":"[POST] /api/v1/auth/forgot-password - Erreur serveur","service":"educonnect-api","stack":"PrismaClientValidationError: \nInvalid `prisma.user.update()` invocation:\n\n{\n  where: {\n    email: \"dhilomoun2006@gmail.com\"\n  },\n  data: {\n    resetCode: \"548405\",\n    ~~~~~~~~~\n    resetCodeExpiresAt: new Date(\"2026-03-19T10:49:04.592Z\"),\n?   id?: String | StringFieldUpdateOperationsInput,\n?   email?: String | StringFieldUpdateOperationsInput,\n?   password?: String | StringFieldUpdateOperationsInput,\n?   role?: String | StringFieldUpdateOperationsInput,\n?   firstName?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   lastName?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   phone?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   avatar?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   isVerified?: Boolean | BoolFieldUpdateOperationsInput,\n?   isActive?: Boolean | BoolFieldUpdateOperationsInput,\n?   termsAccepted?: Boolean | BoolFieldUpdateOperationsInput,\n?   termsAcceptedAt?: DateTime | NullableDateTimeFieldUpdateOperationsInput | Null,\n?   termsVersion?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   lastLogin?: DateTime | NullableDateTimeFieldUpdateOperationsInput | Null,\n?   verificationCode?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   verificationCodeExpiresAt?: DateTime | NullableDateTimeFieldUpdateOperationsInput | Null,\n?   accessibilitySettings?: String | NullableStringFieldUpdateOperationsInput | Null,\n?   createdAt?: DateTime | DateTimeFieldUpdateOperationsInput,\n?   updatedAt?: DateTime | DateTimeFieldUpdateOperationsInput,\n?   teacherProfile?: TeacherProfileUpdateOneWithoutUserNestedInput,\n?   parentProfile?: ParentProfileUpdateOneWithoutUserNestedInput,\n?   studentProfile?: StudentProfileUpdateOneWithoutUserNestedInput,\n?   schoolProfile?: SchoolProfileUpdateOneWithoutUserNestedInput,\n?   wallet?: WalletUpdateOneWithoutUserNestedInput,\n?   forumPosts?: ForumPostUpdateManyWithoutAuthorNestedInput,\n?   forumComments?: ForumCommentUpdateManyWithoutAuthorNestedInput,\n?   notifications?: NotificationUpdateManyWithoutUserNestedInput,\n?   sessions?: SessionUpdateManyWithoutUserNestedInput\n  }\n}\n\nUnknown argument `resetCode`. Available options are marked with ?.\n    at wn (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:29:1363)\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6958)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async forgotPassword (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:218:5)","timestamp":"2026-03-19 10:49:04"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 10:56:17"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 10:56:17"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 10:56:18"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 10:56:18"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 10:56:18"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 10:56:18"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 10:56:18"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 11:04:14"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 11:04:14"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 11:04:16"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 11:04:16"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 11:04:16"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 11:04:16"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 11:04:16"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 13:10:38"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 13:10:38"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 13:10:42"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 13:10:42"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 13:10:42"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 13:10:42"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 13:10:42"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 13:12:41"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 13:12:41"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 13:12:43"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 13:12:43"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 13:12:43"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 13:12:43"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 13:12:43"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 13:12:43"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 13:12:43"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 13:12:45"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 13:12:45"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 13:12:45"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 13:12:45"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 13:12:45"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 13:13:30"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 13:13:30"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 13:13:32"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 13:13:32"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 13:13:34"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 13:13:34"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 13:13:34"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 13:13:34"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 13:13:34"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 13:13:35"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 13:13:35"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 13:13:36"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 13:13:36"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 13:13:36"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 13:13:36"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 13:13:36"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 13:13:37"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 13:13:37"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 13:13:38"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 13:13:38"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 13:13:38"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 13:13:38"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 13:13:38"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 13:13:39"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 13:13:39"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 13:13:39"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 13:13:41"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 13:13:41"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 13:13:41"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 13:13:41"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 13:13:41"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 13:38:23"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 13:38:23"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 13:38:23"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 13:38:25"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 13:38:25"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 13:38:25"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 13:38:25"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 13:38:25"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 13:44:14"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 13:44:14"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 13:44:14"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 13:44:16"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 13:44:16"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 13:44:16"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 13:44:16"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 13:44:16"}
+{"error":"\nInvalid `prisma.user.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size","level":"error","message":"[GET] /api/v1/auth/profile - Erreur serveur","service":"educonnect-api","stack":"PrismaClientUnknownRequestError: \nInvalid `prisma.user.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:7505)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async getProfile (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:187:18)","timestamp":"2026-03-19 14:21:11"}
+{"error":"\nInvalid `prisma.session.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size","level":"error","message":"[POST] /api/v1/auth/refresh - Erreur serveur","service":"educonnect-api","stack":"PrismaClientUnknownRequestError: \nInvalid `prisma.session.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:7505)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async refresh (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:282:21)","timestamp":"2026-03-19 14:21:12"}
+{"error":"\nInvalid `prisma.user.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size","level":"error","message":"[GET] /api/v1/auth/profile - Erreur serveur","service":"educonnect-api","stack":"PrismaClientUnknownRequestError: \nInvalid `prisma.user.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:7505)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async getProfile (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:187:18)","timestamp":"2026-03-19 14:21:12"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 14:23:14"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 14:23:14"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 14:23:14"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 14:23:15"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 14:23:15"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 14:23:15"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 14:23:15"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 14:23:15"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 14:25:59"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 14:26:00"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 14:26:00"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 14:26:01"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 14:26:01"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 14:26:01"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 14:26:01"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 14:26:01"}
+{"error":"\nInvalid `prisma.session.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size","level":"error","message":"[POST] /api/v1/auth/refresh - Erreur serveur","service":"educonnect-api","stack":"PrismaClientUnknownRequestError: \nInvalid `prisma.session.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:7505)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async refresh (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:282:21)","timestamp":"2026-03-19 14:35:06"}
+{"error":"\nInvalid `prisma.session.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size","level":"error","message":"[POST] /api/v1/auth/refresh - Erreur serveur","service":"educonnect-api","stack":"PrismaClientUnknownRequestError: \nInvalid `prisma.session.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:7505)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async refresh (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:282:21)","timestamp":"2026-03-19 14:35:06"}
+{"error":"\nInvalid `prisma.user.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size","level":"error","message":"[POST] /api/v1/auth/login - Erreur serveur","service":"educonnect-api","stack":"PrismaClientUnknownRequestError: \nInvalid `prisma.user.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:7505)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async login (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:116:18)","timestamp":"2026-03-19 14:37:19"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 14:38:39"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 14:38:39"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 14:38:39"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 14:38:41"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 14:38:41"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 14:38:41"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 14:38:41"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 14:38:41"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 14:39:54"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 14:39:54"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 14:39:54"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 14:39:55"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 14:39:55"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 14:39:55"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 14:39:55"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 14:39:55"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 14:39:56"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 14:39:56"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 14:39:56"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 14:39:58"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 14:39:58"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 14:39:58"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 14:39:58"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 14:39:58"}
+{"error":"\nInvalid `prisma.session.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size","level":"error","message":"[POST] /api/v1/auth/refresh - Erreur serveur","service":"educonnect-api","stack":"PrismaClientUnknownRequestError: \nInvalid `prisma.session.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:7505)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async refresh (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:282:21)","timestamp":"2026-03-19 14:41:26"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 14:43:08"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 14:43:08"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 14:43:08"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 14:43:10"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 14:43:10"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 14:43:10"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 14:43:10"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 14:43:10"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 14:44:16"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 14:44:16"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 14:44:16"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 14:44:17"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 14:44:17"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 14:44:17"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 14:44:17"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 14:44:17"}
+{"error":"\nInvalid `prisma.session.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size","level":"error","message":"[POST] /api/v1/auth/refresh - Erreur serveur","service":"educonnect-api","stack":"PrismaClientUnknownRequestError: \nInvalid `prisma.session.findUnique()` invocation:\n\n\nError in connector: Error querying the database: FATAL: MaxClientsInSessionMode: max clients reached - in Session mode max clients are limited to pool_size\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:7505)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async refresh (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/auth/auth.controller.js:282:21)","timestamp":"2026-03-19 14:45:02"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 14:45:21"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 14:45:21"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 14:45:21"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 14:45:22"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 14:45:22"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 14:45:22"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 14:45:22"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 14:45:22"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 14:48:11"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 14:48:11"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 14:48:11"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 14:48:13"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 14:48:13"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 14:48:13"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 14:48:13"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 14:48:13"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 15:04:35"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 15:04:35"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 15:04:35"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 15:04:37"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 15:04:37"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 15:04:37"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 15:04:37"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 15:04:37"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 15:07:54"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 15:07:54"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 15:07:54"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 15:07:56"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 15:07:56"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 15:07:56"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 15:07:56"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 15:07:56"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 15:08:10"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 15:08:10"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 15:08:10"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 15:08:11"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 15:08:11"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 15:08:11"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 15:08:11"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 15:08:11"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 15:09:06"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 15:09:06"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 15:09:06"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 15:09:07"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 15:09:07"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 15:09:07"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 15:09:07"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 15:09:07"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 15:10:37"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 15:10:37"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 15:10:37"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 15:10:39"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 15:10:39"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 15:10:39"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 15:10:39"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 15:10:39"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 15:24:14"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 15:24:14"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 15:24:14"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 15:24:15"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 15:24:15"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 15:24:15"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 15:24:15"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 15:24:15"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 15:47:02"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 15:47:03"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 15:47:03"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 15:47:04"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 15:47:04"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 15:47:04"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 15:47:04"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 15:47:04"}
+{"error":"\nInvalid `prisma.user.count()` invocation:\n\n\nCan't reach database server at `aws-1-eu-west-1.pooler.supabase.com:6543`\n\nPlease make sure your database server is running at `aws-1-eu-west-1.pooler.supabase.com:6543`.","level":"error","message":"[GET] /api/v1/admin/stats - Erreur serveur","service":"educonnect-api","stack":"PrismaClientKnownRequestError: \nInvalid `prisma.user.count()` invocation:\n\n\nCan't reach database server at `aws-1-eu-west-1.pooler.supabase.com:6543`\n\nPlease make sure your database server is running at `aws-1-eu-west-1.pooler.supabase.com:6543`.\n    at $n.handleRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:7315)\n    at $n.handleAndLogRequestError (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6623)\n    at $n.request (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:121:6307)\n    at async l (/home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/node_modules/@prisma/client/runtime/library.js:130:9633)\n    at async Promise.all (index 7)\n    at async Module.getGlobalStats (file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/admin/admin.service.js:18:7)\n    at async file:///home/jordan_amouzoun/jordan/Kplowe/kplonwe-server/src/modules/admin/admin.controller.js:6:17","timestamp":"2026-03-19 15:47:31"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 15:49:25"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 15:49:25"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 15:49:25"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 15:49:26"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 15:49:26"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 15:49:26"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 15:49:26"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 15:49:26"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 15:57:32"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 15:57:32"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 15:57:32"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 15:57:34"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 15:57:34"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 15:57:34"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 15:57:34"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 15:57:34"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 15:58:03"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 15:58:03"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 15:58:03"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 15:58:04"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 15:58:04"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 15:58:04"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 15:58:04"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 15:58:04"}
+{"level":"info","message":"ℹ️ Stripe désactivé (pas de clé API configurée)","service":"educonnect-api","timestamp":"2026-03-19 16:05:48"}
+{"level":"info","message":"🔍 Vérification dossiers uploads...","service":"educonnect-api","timestamp":"2026-03-19 16:05:48"}
+{"level":"info","message":"✅ Dossiers uploads prêts","service":"educonnect-api","timestamp":"2026-03-19 16:05:48"}
+{"level":"info","message":"✅ Database connected","service":"educonnect-api","timestamp":"2026-03-19 16:05:50"}
+{"level":"info","message":"🕐 CRON: Planificateur d'abonnements démarré (0 */6 * * *)","service":"educonnect-api","timestamp":"2026-03-19 16:05:50"}
+{"level":"info","message":"🚀 Server running on port 5000","service":"educonnect-api","timestamp":"2026-03-19 16:05:50"}
+{"level":"info","message":"📡 API: http://localhost:5000/api/v1","service":"educonnect-api","timestamp":"2026-03-19 16:05:50"}
+{"level":"info","message":"💚 Health: http://localhost:5000/health","service":"educonnect-api","timestamp":"2026-03-19 16:05:50"}
