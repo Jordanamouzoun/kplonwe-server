@@ -45,7 +45,7 @@ export const uploadDocument = async (req, res) => {
         originalName: req.file.originalname,
         fileSize: req.file.size,
         mimeType: req.file.mimetype,
-        filePath: `/uploads/teacher-documents/${req.file.filename}`,
+        filePath: req.file.path, // Utilise l'URL Cloudinary
         status: 'PENDING',
       },
     });

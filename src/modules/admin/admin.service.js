@@ -15,6 +15,7 @@ export const getGlobalStats = async () => {
     totalSchools,
     totalAdmins,
     totalStudents,
+    certifiedTeachers,
   ] = await Promise.all([
     prisma.user.count({ where: { role: 'TEACHER' } }),
     prisma.teacherProfile.count({ where: { validationStatus: 'VERIFIED' } }),
@@ -24,6 +25,7 @@ export const getGlobalStats = async () => {
     prisma.user.count({ where: { role: 'SCHOOL' } }),
     prisma.user.count({ where: { role: 'ADMIN' } }),
     prisma.user.count({ where: { role: 'STUDENT' } }),
+    prisma.teacherProfile.count({ where: { isPremium: true } }),
   ]);
 
   return {
@@ -35,6 +37,7 @@ export const getGlobalStats = async () => {
     totalSchools,
     totalAdmins,
     totalStudents,
+    certifiedTeachers,
   };
 };
 
@@ -147,6 +150,50 @@ export const rejectTeacher = async (teacherId, adminId, comment) => {
       message: comment
         ? `Votre profil a été refusé. Raison : ${comment}`
         : "Votre profil n'a pas été accepté. Veuillez le compléter et soumettre à nouveau.",
+    },
+  });
+};
+
+export const certifyTeacher = async (teacherId, adminId) => {
+  const teacher = await prisma.teacherProfile.findUnique({ where: { id: teacherId } });
+  if (!teacher) throw new AppError('Enseignant introuvable', 404);
+
+  await prisma.teacherProfile.update({
+    where: { id: teacherId },
+    data: {
+      isPremium: true,
+      validatedBy: adminId,
+      validatedAt: new Date(),
+    },
+  });
+
+  await prisma.notification.create({
+    data: {
+      userId: teacher.userId,
+      type: 'TEACHER_CERTIFIED',
+      title: 'Profil certifié !',
+      message: 'Félicitations ! Votre profil a été certifié par l\'administration.',
+    },
+  });
+};
+
+export const decertifyTeacher = async (teacherId, adminId) => {
+  const teacher = await prisma.teacherProfile.findUnique({ where: { id: teacherId } });
+  if (!teacher) throw new AppError('Enseignant introuvable', 404);
+
+  await prisma.teacherProfile.update({
+    where: { id: teacherId },
+    data: {
+      isPremium: false,
+    },
+  });
+
+  await prisma.notification.create({
+    data: {
+      userId: teacher.userId,
+      type: 'TEACHER_DECERTIFIED',
+      title: 'Certification retirée',
+      message: 'Votre statut certifié a été retiré par l\'administration.',
     },
   });
 };

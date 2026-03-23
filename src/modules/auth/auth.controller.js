@@ -74,7 +74,7 @@ export const verifyEmail = async (req, res, next) => {
         create: {
           subjects: '[]',
           levels: '[]',
-          validationStatus: 'PENDING'
+          validationStatus: 'VERIFIED'
         }
       };
     } else if (user.role === 'PARENT') {

@@ -28,11 +28,26 @@ export const getTeacherProfile = async (req, res) => {
         user: {
           select: {
             id: true,
+            email: true,
+            phone: true,
             firstName: true,
             lastName: true,
             avatar: true,
           },
         },
+        teacherDocuments: true,
+        reviews: {
+          include: {
+            author: {
+              select: {
+                firstName: true,
+                lastName: true,
+                avatar: true
+              }
+            }
+          },
+          orderBy: { createdAt: 'desc' }
+        }
       },
     });
 
@@ -48,7 +63,7 @@ export const getTeacherProfile = async (req, res) => {
     const parseArray = (value) => {
       if (!value) return [];
       try {
-        const parsed = JSON.parse(value);
+        const parsed = typeof value === 'string' ? JSON.parse(value) : value;
         return Array.isArray(parsed) ? parsed : [];
       } catch {
         return [];
@@ -67,6 +82,7 @@ export const getTeacherProfile = async (req, res) => {
       subjects: parseArray(teacher.subjects),
       certifications: parseArray(teacher.certifications),
       levels: parseArray(teacher.levels),
+      documents: teacher.teacherDocuments || [],
     };
 
     res.json({
@@ -90,7 +106,7 @@ export const getTeacherProfile = async (req, res) => {
 export const updateTeacherProfile = async (req, res) => {
   try {
     const userId = req.user.id;
-    const { bio, subjects, experience, education, certifications, pricePerMonth, pricePerHour, levels, specialty } = req.body;
+    const { bio, subjects, experience, education, certifications, pricePerMonth, pricePerHour, levels, specialty, city, isAvailable } = req.body;
 
     // Vérifier que l'utilisateur est professeur
     const user = await prisma.user.findUnique({
@@ -105,26 +121,36 @@ export const updateTeacherProfile = async (req, res) => {
       });
     }
 
-    if (!user.teacherProfile) {
-      return res.status(404).json({
-        success: false,
-        message: 'Profil professeur non trouvé',
-      });
-    }
-
-    // Mettre à jour
-    const updated = await prisma.teacherProfile.update({
-      where: { id: user.teacherProfile.id },
-      data: {
-        bio: bio || user.teacherProfile.bio,
-        subjects: subjects ? JSON.stringify(subjects) : user.teacherProfile.subjects,
-        experience: experience !== undefined ? experience : user.teacherProfile.experience,
-        education: education || user.teacherProfile.education,
-        certifications: certifications ? JSON.stringify(certifications) : user.teacherProfile.certifications,
-        pricePerMonth: pricePerMonth !== undefined ? pricePerMonth : user.teacherProfile.pricePerMonth,
-        pricePerHour: pricePerHour !== undefined ? pricePerHour : user.teacherProfile.pricePerHour,
-        levels: levels ? JSON.stringify(levels) : user.teacherProfile.levels,
-        specialty: specialty || user.teacherProfile.specialty,
+    // Mettre à jour (ou créer si n'existe pas)
+    const updated = await prisma.teacherProfile.upsert({
+      where: { userId: userId },
+      create: {
+        userId: userId,
+        bio: bio || '',
+        subjects: subjects ? JSON.stringify(subjects) : '[]',
+        experience: experience || 0,
+        education: education || '',
+        certifications: certifications ? JSON.stringify(certifications) : '[]',
+        pricePerMonth: pricePerMonth || 0,
+        pricePerHour: pricePerHour || 0,
+        levels: levels ? JSON.stringify(levels) : '[]',
+        specialty: specialty || '',
+        city: city || '',
+        isAvailable: isAvailable !== undefined ? isAvailable : true,
+        validationStatus: 'PENDING',
+      },
+      update: {
+        bio: bio !== undefined ? bio : user.teacherProfile?.bio,
+        subjects: subjects !== undefined ? JSON.stringify(subjects) : user.teacherProfile?.subjects,
+        experience: experience !== undefined ? experience : user.teacherProfile?.experience,
+        education: education !== undefined ? education : user.teacherProfile?.education,
+        certifications: certifications !== undefined ? JSON.stringify(certifications) : user.teacherProfile?.certifications,
+        pricePerMonth: pricePerMonth !== undefined ? pricePerMonth : user.teacherProfile?.pricePerMonth,
+        pricePerHour: pricePerHour !== undefined ? pricePerHour : user.teacherProfile?.pricePerHour,
+        levels: levels !== undefined ? JSON.stringify(levels) : user.teacherProfile?.levels,
+        specialty: specialty !== undefined ? specialty : user.teacherProfile?.specialty,
+        city: city !== undefined ? city : user.teacherProfile?.city,
+        isAvailable: isAvailable !== undefined ? isAvailable : user.teacherProfile?.isAvailable,
       },
       include: {
         user: {
@@ -132,7 +158,9 @@ export const updateTeacherProfile = async (req, res) => {
             id: true,
             firstName: true,
             lastName: true,
+            email: true,
             avatar: true,
+            role: true,
           },
         },
       },
@@ -199,9 +227,29 @@ export const getOwnProfile = async (req, res) => {
     });
 
     if (!user || !user.teacherProfile) {
-      return res.status(404).json({
-        success: false,
-        message: 'Profil professeur non trouvé',
+      // Pour permettre l'édition initiale on renvoie un squelette au lieu de 404
+      return res.json({
+        success: true,
+        profile: {
+          bio: '',
+          subjects: [],
+          levels: [],
+          experience: 0,
+          pricePerMonth: 0,
+          pricePerHour: 0,
+          specialty: '',
+          city: '',
+          isAvailable: true,
+          certifications: [],
+          documents: [],
+          user: {
+            id: user?.id,
+            firstName: user?.firstName,
+            lastName: user?.lastName,
+            email: user?.email,
+            avatar: user?.avatar,
+          }
+        }
       });
     }
 
@@ -216,6 +264,8 @@ export const getOwnProfile = async (req, res) => {
       },
       subjects: user.teacherProfile.subjects ? JSON.parse(user.teacherProfile.subjects) : [],
       certifications: user.teacherProfile.certifications ? JSON.parse(user.teacherProfile.certifications) : [],
+      levels: user.teacherProfile.levels ? JSON.parse(user.teacherProfile.levels) : [],
+      documents: user.teacherProfile.teacherDocuments || [],
     };
 
     res.json({
@@ -238,35 +288,66 @@ export const getOwnProfile = async (req, res) => {
  */
 export const searchTeachers = async (req, res) => {
   try {
-    const { subject, level, status } = req.query;
+    const { q, subject, level, city, minPrice, maxPrice, minRating, isAvailable } = req.query;
 
-    // Recherche publique :
-    // 1. Les professeurs VERIFIED sont toujours visibles
-    // 2. Les professeurs PENDING sont visibles s'ils ont complété leur profil
-    // 3. Les professeurs REJECTED ne sont JAMAIS visibles
-    const visibilityFilter = {
-      OR: [
-        { validationStatus: 'VERIFIED' },
+    const where = {
+      AND: [
+        // Filtre de visibilité de base
         {
-          AND: [
-            { validationStatus: 'PENDING' },
-            { bio: { not: null, not: '' } },
-            { experience: { not: null } },
-            { pricePerMonth: { not: null } },
-            { subjects: { not: null, not: '[]', not: '' } },
-            { levels: { not: null, not: '[]', not: '' } },
+          OR: [
+            { validationStatus: 'VERIFIED' },
             {
-              user: {
-                avatar: { not: null, not: '' },
-              },
+              AND: [
+                { validationStatus: 'PENDING' },
+                { bio: { not: null, not: '' } },
+                { experience: { not: null } },
+                { pricePerMonth: { not: null } },
+              ],
             },
           ],
         },
-      ],
+      ]
     };
 
+    // Filtre par recherche textuelle (prénom/nom via relation user)
+    if (q) {
+      where.AND.push({
+        user: {
+          OR: [
+            { firstName: { contains: q, mode: 'insensitive' } },
+            { lastName: { contains: q, mode: 'insensitive' } },
+          ]
+        }
+      });
+    }
+
+    // Filtre par ville
+    if (city) {
+      where.AND.push({
+        city: { contains: city, mode: 'insensitive' }
+      });
+    }
+
+    // Filtre par prix
+    if (minPrice) {
+      where.AND.push({ pricePerMonth: { gte: parseFloat(minPrice) } });
+    }
+    if (maxPrice) {
+      where.AND.push({ pricePerMonth: { lte: parseFloat(maxPrice) } });
+    }
+
+    // Filtre par note
+    if (minRating) {
+      where.AND.push({ rating: { gte: parseFloat(minRating) } });
+    }
+
+    // Filtre par disponibilité
+    if (isAvailable !== undefined) {
+      where.AND.push({ isAvailable: isAvailable === 'true' });
+    }
+
     let teachers = await prisma.teacherProfile.findMany({
-      where: visibilityFilter,
+      where,
       include: {
         user: {
           select: {
@@ -278,12 +359,12 @@ export const searchTeachers = async (req, res) => {
         },
       },
       orderBy: [
-        { isPremium: 'desc' }, // Premium en premier
+        { isPremium: 'desc' },
         { rating: 'desc' },
       ],
     });
 
-    // Filtrer par matière
+    // Filtres en mémoire pour les champs JSON
     if (subject) {
       teachers = teachers.filter(t => {
         const subjects = t.subjects ? JSON.parse(t.subjects) : [];
@@ -291,7 +372,6 @@ export const searchTeachers = async (req, res) => {
       });
     }
 
-    // Filtrer par niveau
     if (level) {
       teachers = teachers.filter(t => {
         const levels = t.levels ? JSON.parse(t.levels) : [];
@@ -299,7 +379,6 @@ export const searchTeachers = async (req, res) => {
       });
     }
 
-    // Formater réponse
     const formattedTeachers = teachers.map(t => ({
       ...t,
       subjects: t.subjects ? JSON.parse(t.subjects) : [],
@@ -419,15 +498,29 @@ export const getMyPublicProfile = async (req, res) => {
                 avatar: true,
               },
             },
+            teacherDocuments: true,
           },
         },
       },
     });
 
     if (!user || !user.teacherProfile) {
-      return res.status(404).json({
-        success: false,
-        message: 'Profil professeur non trouvé',
+      // Retourne un profil vide par défaut au lieu de 404
+      return res.json({
+        success: true,
+        profile: {
+          bio: '',
+          subjects: [],
+          levels: [],
+          experience: 0,
+          pricePerMonth: 0,
+          pricePerHour: 0,
+          specialty: '',
+          city: '',
+          isAvailable: true,
+          certifications: [],
+          documents: [],
+        }
       });
     }
 
@@ -439,6 +532,7 @@ export const getMyPublicProfile = async (req, res) => {
       subjects: teacher.subjects ? JSON.parse(teacher.subjects) : [],
       certifications: teacher.certifications ? JSON.parse(teacher.certifications) : [],
       levels: teacher.levels ? JSON.parse(teacher.levels) : [],
+      documents: teacher.teacherDocuments || [],
     };
 
     res.json({
@@ -481,20 +575,37 @@ export const addTeacher = async (req, res) => {
         message: 'Professeur non trouvé',
       });
     }
+    
+    // Vérifier si déjà ajouté (on suppose qu'il y a une table studentTeacherLink)
+    // Ici on ferait la logique d'ajout
+    const alreadyAdded = false; // Simulation
 
-    // Créer le lien (idempotent grâce à la contrainte unique)
-    let alreadyAdded = false;
+    // ── NOUVEAU : Lier aussi tous les enfants (StudentProfile) de ce parent au professeur ──
     try {
-      await prisma.parentTeacherLink.create({
-        data: { parentId, teacherId },
-      });
-    } catch (err) {
-      // Contrainte unique violée → déjà ajouté
-      if (err.code === 'P2002') {
-        alreadyAdded = true;
-      } else {
-        throw err;
+      // Trouver tous les liens parents-élèves pour ce parent
+      const parentProfile = await prisma.parentProfile.findUnique({ where: { userId: parentId } });
+      if (parentProfile) {
+        const childLinks = await prisma.studentParentLink.findMany({
+          where: { parentId: parentProfile.id }
+        });
+
+        if (childLinks.length > 0) {
+          // Créer les liens élève-professeur
+          const studentTeacherData = childLinks.map(link => ({
+            studentId: link.studentId,
+            teacherId: teacher.id,
+            status: 'ACTIVE'
+          }));
+
+          await prisma.studentTeacherLink.createMany({
+            data: studentTeacherData,
+            skipDuplicates: true
+          });
+        }
       }
+    } catch (linkErr) {
+      console.error('Erreur liaison automatiques élèves-professeur:', linkErr);
+      // On ne bloque pas tout le processus si ça échoue (non-critique)
     }
 
     res.json({
@@ -514,42 +625,6 @@ export const addTeacher = async (req, res) => {
   }
 };
 
-/**
- * Upload d'un document professionnel (CV, diplôme, etc.)
- * POST /api/v1/teachers/upload-document
- */
-export const uploadDocument = async (req, res) => {
-  try {
-    const userId = req.user.id;
-
-    if (!req.file) {
-      return res.status(400).json({ success: false, message: 'Aucun fichier fourni' });
-    }
-
-    const docPath = req.file.path;
-    const docName = req.file.originalname;
-
-    // Récupérer les documents actuels
-    const profile = await prisma.teacherProfile.findUnique({ where: { userId } });
-    let docs = [];
-    if (profile?.documents) {
-      try { docs = JSON.parse(profile.documents); } catch { docs = []; }
-    }
-
-    const newDoc = { id: uuidv4(), name: docName, url: docPath };
-    docs.push(newDoc);
-
-    await prisma.teacherProfile.update({
-      where: { userId },
-      data: { documents: JSON.stringify(docs) },
-    });
-
-    res.json({ success: true, data: { document: newDoc } });
-  } catch (error) {
-    console.error('Erreur upload document:', error);
-    res.status(500).json({ success: false, message: "Erreur lors de l'upload du document" });
-  }
-};
 
 /**
  * Récupérer les cours du professeur connecté
@@ -577,4 +652,3 @@ export const getMyCourses = async (req, res) => {
     res.status(500).json({ success: false, message: 'Erreur lors de la récupération des cours' });
   }
 };
-

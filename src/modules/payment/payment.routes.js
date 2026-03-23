@@ -6,6 +6,7 @@ import {
   momoWebhook, 
   moovWebhook, 
   stripeWebhook, 
+  fedapayWebhook,
   getTransactionStatus 
 } from './payment.controller.js';
 import { authenticate } from '../../middlewares/auth.middleware.js';
@@ -16,6 +17,7 @@ const router = express.Router();
 router.post('/webhooks/momo', momoWebhook);
 router.post('/webhooks/moov', moovWebhook);
 router.post('/webhooks/stripe', express.raw({ type: 'application/json' }), stripeWebhook);
+router.post('/webhooks/fedapay', fedapayWebhook);
 
 // Routes protégées
 router.use(authenticate);

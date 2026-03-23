@@ -4,6 +4,7 @@ import { AppError } from '../../middlewares/error.middleware.js';
 import * as momoProvider from './providers/momo.provider.js';
 import * as moovProvider from './providers/moov.provider.js';
 import * as stripeProvider from './providers/stripe.provider.js';
+import * as fedapayProvider from './providers/fedapay.provider.js';
 import logger from '../../utils/logger.js';
 
 
@@ -76,6 +77,10 @@ export const initiateRecharge = async (userId, amount, method) => {
         });
         break;
         
+      case 'FEDAPAY':
+        paymentResponse = await fedapayProvider.createFedaPayTransaction(amount, user, reference);
+        break;
+        
       default:
         throw new AppError('Méthode de paiement non supportée', 400);
     }
@@ -104,7 +109,7 @@ export const initiateRecharge = async (userId, amount, method) => {
   await prisma.transaction.update({
     where: { id: transaction.id },
     data: { 
-      providerRef: paymentResponse.data?.id || paymentResponse.id,
+      providerRef: (paymentResponse.data?.id || paymentResponse.id).toString(),
       providerResponse: JSON.stringify(paymentResponse)
     }
   });
@@ -116,8 +121,33 @@ export const initiateRecharge = async (userId, amount, method) => {
     amount,
     method,
     clientSecret: paymentResponse.clientSecret, // Pour Stripe
+    url: paymentResponse.url, // Pour FedaPay
+    token: paymentResponse.token, // Pour FedaPay
     status: 'PENDING'
   };
+};
+
+export const handleFedaPayWebhook = async (payload) => {
+  const webhookData = fedapayProvider.parseFedaPayWebhook(payload);
+  const { reference, status, providerRef } = webhookData;
+
+  logger.info(`📥 Webhook FedaPay: ${reference} - ${status} (ID: ${providerRef})`);
+
+  const transaction = await prisma.transaction.findUnique({ where: { reference } });
+  if (!transaction || transaction.isLocked || transaction.status !== 'PENDING') {
+    return { success: true, message: 'Déjà traité ou introuvable' };
+  }
+
+  if (status === 'approved') {
+    await completeRecharge(transaction, webhookData);
+  } else {
+    await prisma.transaction.update({
+      where: { id: transaction.id },
+      data: { status: 'FAILED', providerResponse: JSON.stringify(webhookData), isLocked: true }
+    });
+  }
+
+  return { success: true };
 };
 
 /**
@@ -252,10 +282,48 @@ async function completeRecharge(transaction, webhookData) {
   // CRITIQUE: Transaction atomique Prisma
   // Soit TOUT réussit, soit RIEN
   await prisma.$transaction(async (tx) => {
-    // 1. Créditer le wallet
+    let finalAmount = transaction.amount;
+    let commission = 0;
+
+    // Si c'est une RECHARGE, on applique la commission de 15%
+    if (transaction.type === 'RECHARGE') {
+      commission = Math.round(transaction.amount * (parseFloat(process.env.PLATFORM_COMMISSION_RATE) || 0.15));
+      finalAmount = transaction.amount - commission;
+
+      // Créditer le wallet plateforme (Admin)
+      if (PLATFORM_WALLET_USER_ID) {
+        const platformWallet = await tx.wallet.findUnique({ 
+          where: { userId: PLATFORM_WALLET_USER_ID } 
+        });
+        
+        if (platformWallet) {
+          await tx.wallet.update({
+            where: { id: platformWallet.id },
+            data: { balance: { increment: commission } }
+          });
+
+          // Créer transaction de commission interne
+          await tx.transaction.create({
+            data: {
+              reference: `COMM-${uuidv4()}`,
+              type: 'COMMISSION',
+              amount: commission,
+              status: 'COMPLETED',
+              toWalletId: platformWallet.id,
+              paymentMethod: 'SYSTEM',
+              description: `Commission 15% sur recharge ${transaction.reference}`,
+              isLocked: true,
+              metadata: JSON.stringify({ parentRef: transaction.reference })
+            }
+          });
+        }
+      }
+    }
+
+    // 1. Créditer le wallet destination (Montant net après commission)
     await tx.wallet.update({
       where: { id: transaction.toWalletId },
-      data: { balance: { increment: transaction.amount } }
+      data: { balance: { increment: finalAmount } }
     });
 
     // 2. Marquer transaction COMPLETED et LOCKED
@@ -264,18 +332,23 @@ async function completeRecharge(transaction, webhookData) {
       data: { 
         status: 'COMPLETED', 
         isLocked: true,
+        metadata: JSON.stringify({ 
+          ...JSON.parse(transaction.metadata || '{}'),
+          commission,
+          netAmount: finalAmount
+        }),
         providerResponse: JSON.stringify(webhookData)
       }
     });
 
-    // 3. Créer notification
+    // 3. Créer notification pour l'utilisateur
     const wallet = await tx.wallet.findUnique({ where: { id: transaction.toWalletId } });
     await tx.notification.create({
       data: {
         userId: wallet.userId,
         type: 'RECHARGE_SUCCESS',
         title: 'Recharge réussie',
-        message: `Votre wallet a été crédité de ${transaction.amount} FCFA`
+        message: `Votre wallet a été crédité de ${finalAmount} FCFA (frais de plateforme déduits)`
       }
     });
   });

@@ -29,6 +29,7 @@ import messagingRoutes from './modules/messaging/messaging.routes.js';
 import notificationsRoutes from './modules/notifications/notifications.routes.js';
 import teacherProfileRoutes from './modules/teacher-profile/teacher-profile.routes.js';
 import evaluationRoutes from './modules/evaluation/evaluation.routes.js';
+import teacherQuizRoutes from './modules/teacher-quiz/teacher-quiz.routes.js';
 
 const app = express();
 
@@ -90,7 +91,7 @@ app.get('/health', (req, res) => {
 const apiPrefix = process.env.API_PREFIX || '/api/v1';
 app.use(`${apiPrefix}/auth`,          authRoutes);
 app.use(`${apiPrefix}/wallet`,        walletRoutes);
-app.use(`${apiPrefix}/payment`,       paymentRoutes);
+app.use(`${apiPrefix}/payments`,      paymentRoutes);
 app.use(`${apiPrefix}/admin`,         adminRoutes);
 app.use(`${apiPrefix}/subscription`,  subscriptionRoutes);
 app.use(`${apiPrefix}/children`,      childrenRoutes);
@@ -98,6 +99,7 @@ app.use(`${apiPrefix}/messages`,      messagingRoutes);
 app.use(`${apiPrefix}/notifications`, notificationsRoutes);
 app.use(`${apiPrefix}/teachers`,      teacherProfileRoutes);
 app.use(`${apiPrefix}/evaluation`,    evaluationRoutes);
+app.use(`${apiPrefix}/quizzes`,       teacherQuizRoutes);
 
 // ── Error handling ────────────────────────────────────────────────────────────
 app.use((req, res) => {

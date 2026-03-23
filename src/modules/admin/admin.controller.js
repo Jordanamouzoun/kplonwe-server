@@ -33,6 +33,16 @@ export const rejectTeacher = asyncHandler(async (req, res) => {
   res.json({ success: true, message: 'Enseignant refusé' });
 });
 
+export const certifyTeacher = asyncHandler(async (req, res) => {
+  await adminService.certifyTeacher(req.params.id, req.user.id);
+  res.json({ success: true, message: 'Enseignant certifié avec succès' });
+});
+
+export const decertifyTeacher = asyncHandler(async (req, res) => {
+  await adminService.decertifyTeacher(req.params.id, req.user.id);
+  res.json({ success: true, message: 'Certification retirée' });
+});
+
 // ── PARENTS ────────────────────────────────────────────────────────────────
 export const getAllParents = asyncHandler(async (req, res) => {
   const parents = await adminService.getAllParents();

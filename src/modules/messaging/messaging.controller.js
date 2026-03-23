@@ -1,5 +1,6 @@
 import prisma from '../../lib/prisma.js';
 import { v4 as uuidv4 } from 'uuid';
+import logger from '../../utils/logger.js';
 
 
 // Vérifier si la conversation est autorisée selon les règles métier
@@ -28,6 +29,7 @@ export const createOrGetConversation = async (req, res) => {
     const participant1Id = req.user.id;
     
     // Récupérer les utilisateurs
+    logger.info(`Création conversation: p1=${participant1Id}, p2=${participant2Id}`);
     const user1 = await prisma.user.findUnique({ where: { id: participant1Id } });
     const user2 = await prisma.user.findUnique({ where: { id: participant2Id } });
     
@@ -88,16 +90,17 @@ export const createOrGetConversation = async (req, res) => {
       success: true,
       conversation: {
         ...conversation,
-        participant1: { id: user1.id, firstName: user1.firstName, lastName: user1.lastName, role: user1.role },
-        participant2: { id: user2.id, firstName: user2.firstName, lastName: user2.lastName, role: user2.role },
+        participant1: { id: user1.id, firstName: user1.firstName, lastName: user1.lastName, role: user1.role, avatar: user1.avatar },
+        participant2: { id: user2.id, firstName: user2.firstName, lastName: user2.lastName, role: user2.role, avatar: user2.avatar },
       },
     });
   } catch (error) {
-    console.error('Erreur création conversation:', error);
+    logger.error('Erreur création conversation:', error);
     res.status(500).json({
       success: false,
       message: 'Erreur lors de la création de la conversation',
       error: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 };
@@ -132,7 +135,7 @@ export const getConversations = async (req, res) => {
         const otherUserId = conv.participant1Id === userId ? conv.participant2Id : conv.participant1Id;
         const otherUser = await prisma.user.findUnique({
           where: { id: otherUserId },
-          select: { id: true, firstName: true, lastName: true, role: true },
+          select: { id: true, firstName: true, lastName: true, role: true, avatar: true },
         });
         
         // Compter messages non lus
