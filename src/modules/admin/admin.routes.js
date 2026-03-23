@@ -13,7 +13,9 @@ import {
   getAllAdmins,
   createAdmin,
   deleteAdmin,
-  getPMFCohorts
+  getPMFCohorts,
+  certifyTeacher,
+  decertifyTeacher
 } from './admin.controller.js';
 import { authenticate } from '../../middlewares/auth.middleware.js';
 import { requireRole } from '../../middlewares/role.middleware.js';
@@ -29,6 +31,8 @@ router.get('/teachers/pending', getPendingTeachers);
 router.get('/teachers/:id', getTeacherDetails);
 router.put('/teachers/:id/validate', validateTeacher);
 router.put('/teachers/:id/reject', rejectTeacher);
+router.put('/teachers/:id/certify', certifyTeacher);
+router.put('/teachers/:id/decertify', decertifyTeacher);
 
 router.put('/documents/:docId/verify', verifyDocument);
 router.put('/documents/:docId/reject', rejectDocument);

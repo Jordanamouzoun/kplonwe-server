@@ -12,7 +12,9 @@ const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: async (req, file) => {
     // Determine folder based on route (avatars vs documents)
-    const folder = req.url.includes('avatar') ? 'educonnect/avatars' : 'educonnect/documents';
+    let folder = 'educonnect/documents';
+    if (req.url.includes('avatar')) folder = 'educonnect/avatars';
+    if (req.url.includes('quiz')) folder = 'educonnect/quizzes';
     
     // Check file type to allow raw files (like PDFs) or images
     let resource_type = 'auto'; // automatically detecting standard images

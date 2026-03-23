@@ -29,6 +29,11 @@ export const moovWebhook = asyncHandler(async (req, res) => {
   res.sendStatus(200);
 });
 
+export const fedapayWebhook = asyncHandler(async (req, res) => {
+  await paymentService.handleFedaPayWebhook(req.body);
+  res.sendStatus(200);
+});
+
 export const stripeWebhook = asyncHandler(async (req, res) => {
   const signature = req.headers['stripe-signature'];
   await paymentService.handleStripeWebhook(req.rawBody, signature);
